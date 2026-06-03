@@ -655,3 +655,7 @@ h2 {
   color: #ffcc00;
   transform: translateY(-2px);
 }
+
+.academic-card p {
+  text-align: justify;
+}

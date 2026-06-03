@@ -137,7 +137,11 @@ const Education = () => {
             <span className="year-badge">2023</span>
           </div>
           <h3>Técnico en Gestión de la Administración Central</h3>
-          <p>Título oficial. Especialización en modernización del Estado.</p>
+          <p>
+            <b>La Tecnicatura en Gestión de la Administración Central</b> ofrece una formación integral que combina un sólido marco teórico e innovador sobre la administración pública con un enfoque práctico directo en el entorno profesional. 
+            Sus graduados adquieren capacidades analíticas y de gestión para la planificación y formulación de proyectos, políticas públicas, dictámenes y actos administrativos. Asimismo, el plan de estudios consolida un profundo conocimiento del cuerpo legal, la administración financiera, las estructuras de control y el funcionamiento de los organismos del Estado moderno bajo enfoques de gobernanza. 
+            Todo esto se complementa con una visión ética, jurídica y de responsabilidad social, orientada a la mejora continua y al compromiso proactivo con la calidad de vida de los ciudadanos.
+          </p>
           <div className="academic-footer">
             <div className="academic-highlight">Finalizado</div>
             <button className="btn-view-diploma" onClick={() => setSelectedImage(Titulo)}>
@@ -169,7 +173,9 @@ const Education = () => {
             <span className="year-badge">2025</span>
           </div>
           <h3>Diplomatura Universitaria en Infraestructura Tecnológica basada en Software Libre</h3>
-          <p>Título oficial. Especialización en administración avanzada de servidores Linux, redes y virtualización corporativa.</p>
+          <p><b>La Diplomatura Universitaria en Infraestructura Tecnológica basada en Software Libre</b> es un trayecto formativo de la UNNE con una carga de 200 horas reloj y seis meses de duración, diseñado para responder a la demanda de gestión de sistemas de información independientes de licencias pagas. 
+             El perfil habilita al técnico para diseñar, implementar, monitorear y asegurar redes e infraestructuras informáticas a diferentes escalas tanto en servidores físicos propios como en entornos de nube pública. 
+             Entre sus competencias específicas clave se consolidan la instalación y configuración de sistemas operativos Linux, la administración de sistemas y usuarios, el despliegue de redes, servicios esenciales, seguridad informática básica y la gestión de entornos de prueba mediante tecnologías de virtualización.</p>
           <div className="academic-footer">
             <div className="academic-highlight">Finalizado</div>
             <button className="btn-view-diploma" onClick={() => setSelectedImage(Diplomatura)}>
