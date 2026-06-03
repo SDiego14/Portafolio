@@ -1,0 +1,657 @@
+:root {
+  --primary: #003366; /* Azul institucional */
+  --secondary: #f4f4f4;
+  --text: #333;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  color: var(--text);
+}
+/* Estilos modernos para el Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 10%;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo de los botones interactivos */
+.navbar ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.navbar ul li a:hover {
+  color: var(--primary);
+  background: rgba(26, 58, 95, 0.05); /* Fondo muy suave */
+}
+
+/* El botón de contacto resaltado como botón de acción */
+.navbar ul li a[href="#contacto"] {
+  background: var(--primary);
+  color: white;
+  margin-left: 10px;
+}
+
+.navbar ul li a[href="#contacto"]:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Línea animada debajo de los botones (opcional) */
+.navbar ul li a:not([href="#contacto"])::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 50%;
+  background-color: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar ul li a:hover::after {
+  width: 60%;
+}
+
+.section {
+  padding: 50px 5%;
+}
+
+.card {
+  border-left: 4px solid var(--primary);
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Colores Institucionales */
+:root {
+  --primary: #1a3a5f;   /* Azul Marino (Confianza) */
+  --accent: #2a5298;    /* Azul brillante */
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
+}
+
+.bg-light { background-color: var(--light-gray); }
+
+h2 {
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.cert-item {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  transition: padding-left 0.3s;
+}
+
+.cert-item:hover {
+  padding-left: 25px;
+  color: var(--accent);
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  background: var(--primary);
+  color: white;
+  margin-top: 50px;
+}
+
+/* Grilla de Proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.tag {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+/* Botones de Contacto */
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  opacity: 0.8;
+}
+
+.hero-container {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #1a3a5f 0%, #2a5298 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+  flex-wrap: wrap; /* Para que sea responsive en celulares */
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%; /* Foto circular */
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  object-fit: cover; /* Asegura que no se deforme la imagen */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.badge {
+  background: #ffcc00; /* Un toque de color para resaltar */
+  color: #1a3a5f;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin: 10px 0;
+}
+
+.hero-text h2 {
+  font-size: 1.4rem;
+  color: #d1d1d1;
+  border: none; /* Quitamos el borde inferior del H2 solo aquí */
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 20px 0;
+  color: #e0e0e0;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 20px;
+}
+
+.skills-interactive-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skill-card-interactive {
+  background: white;
+  width: 280px;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card-interactive.active {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(26, 58, 95, 0.15);
+  border-color: var(--primary);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.skill-card-interactive ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skill-card-interactive ul.show {
+  opacity: 1;
+}
+
+.skill-card-interactive li {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+/* Efecto de brillo en botones de contacto */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.btn-primary:hover:after {
+  left: 120%;
+}
+
+/* Estilos para la Línea de Tiempo */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -38px;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  background: var(--primary);
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.time-tag {
+  background: var(--primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.timeline-content h3 {
+  margin: 15px 0 5px 0;
+  color: var(--primary);
+}
+
+.timeline-content h4 {
+  margin: 0;
+  color: #666;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.logro-box {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(42, 82, 152, 0.08);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--primary);
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.academic-card {
+  transition: all 0.3s ease;
+  padding: 25px !important;
+}
+
+.academic-card:hover {
+  transform: translateY(-5px);
+}
+
+.gold-border { border-left: 5px solid #ffcc00; }
+.blue-border { border-left: 5px solid #2a5298; }
+.gray-border { border-left: 5px solid #ccc; opacity: 0.8; }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.institution {
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.year-badge {
+  background: var(--light-gray);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.academic-highlight {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--primary);
+  background: rgba(255, 204, 0, 0.1);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+/* Botón de ver diploma */
+.btn-view-diploma {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+.btn-view-diploma:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.academic-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Estilos del Modal (Efecto Pop-up) */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 4px;
+}
+
+.close-btn {
+  margin-top: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+.contact-info {
+  text-align: left;
+}
+
+.contact-buttons-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-outline {
+  padding: 12px 25px;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contenedor de los botones en el Hero */
+.hero-social-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Estilos base para los botones sociales */
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* Botón específico de GitHub */
+.btn-social.github {
+  background-color: #24292e;
+  color: #ffffff;
+  border: 1px solid #24292e;
+}
+
+.btn-social.github:hover {
+  background-color: #ffffff;
+  color: #24292e;
+  transform: translateY(-2px);
+}
+
+/* Botón específico de LinkedIn */
+.btn-social.linkedin {
+  background-color: #0077b5;
+  color: #ffffff;
+  border: 1px solid #0077b5;
+}
+
+.btn-social.linkedin:hover {
+  background-color: #ffffff;
+  color: #0077b5;
+  transform: translateY(-2px);
+}
+
+/* Botón específico de Descarga de CV (Dorado/Naranja institucional) */
+.btn-social.cv-download {
+  background-color: #40bf32;
+  color: #1d2b44; /* El color oscuro de tu tipografía */
+  border: 1px solid #40bf32;
+}
+
+.btn-social.cv-download:hover {
+  background-color: transparent;
+  color: #ffcc00;
+  transform: translateY(-2px);
+}
