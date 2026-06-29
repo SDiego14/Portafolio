@@ -239,23 +239,59 @@ const Skills = () => (
 );
 
 // --- COMPONENTE: PROYECTOS ---
-const Projects = () => (
-  <section id="proyectos" className="section bg-light">
-    <h2>Proyectos Destacados</h2>
-    <div className="projects-grid">
-      <div className="project-card">
-        <h3>Sistema PHP/MySQL</h3>
-        <p>Administración de datos relacionales para gestión interna.</p>
-        <span className="tag">Full Stack</span>
+const Projects = () => {
+  // 1. Definimos la lista de proyectos con sus datos y enlaces
+  const projectList = [
+    {
+      title: "Sistema PHP/MySQL",
+      description: "Administración de datos relacionales para gestión interna.",
+      tag: "Full Stack",
+      link: "#" // Reemplazá por el link real si lo tenés
+    },
+    {
+      title: "Dashboard Adm.",
+      description: "Visualización de indicadores institucionales.",
+      tag: "Responsive",
+      link: "#" // Reemplazá por el link real si lo tenés
+    },
+    {
+      title: "Portafolio Personal",
+      description: "Diseño y desarrollo de mi espacio web profesional para dar a conocer mis proyectos y habilidades.",
+      tag: "React",
+      link: "https://diego-solis-dev.vercel.app/" // 👈 Acá va el link donde está desplegado este portafolio
+    }
+  ];
+
+  return (
+    <section id="proyectos" className="section bg-light">
+      <h2>Proyectos Destacados</h2>
+      <div className="projects-grid">
+        {/* 2. Iteramos sobre la lista para renderizar cada tarjeta */}
+        {projectList.map((project, index) => (
+          <div className="project-card" key={index}>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            
+            <div className="project-footer">
+              <span className="tag">{project.tag}</span>
+              
+              {/* 3. Agregamos el enlace externo seguro */}
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="project-link"
+              >
+                Ver proyecto →
+              </a>
+            </div>
+
+          </div>
+        ))}
       </div>
-      <div className="project-card">
-        <h3>Dashboard Adm.</h3>
-        <p>Visualización de indicadores institucionales.</p>
-        <span className="tag">Responsive</span>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // --- COMPONENTE: CONTACTO (Optimizado) ---
 const Contact = () => {

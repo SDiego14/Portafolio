@@ -659,3 +659,24 @@ h2 {
 .academic-card p {
   text-align: justify;
 }
+
+/* Contenedor para el tag y el link alineados */
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* Estilos para el enlace */
+.project-link {
+  color: #0070f3; /* Ajustá el color al tema de tu portafolio */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #0051b3;
+  text-decoration: underline;
+}
