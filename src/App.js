@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 import emailjs from '@emailjs/browser';
 
-// IMPORTANTE: Asegúrate de que estos nombres de archivos coincidan exactamente en tu carpeta src/assets/
+// IMPORTANTE: Asegúrate de que los archivos existan en tu carpeta src/assets/
 import fotoPerfil from './assets/perfil.jpg'; 
 import Titulo from './assets/Solís Diego_Titulo.jpg';
 import Diplomatura from './assets/Solis_Diego_Diplomatura.jpg';
 import Curso from './assets/Solis_Diego_TD.jpg';
+import { QRCodeSVG } from 'qrcode.react';
 
 // --- COMPONENTE: NAVBAR ---
 const Navbar = () => (
@@ -77,6 +78,13 @@ const Hero = () => (
 // --- COMPONENTE: TRAYECTORIA ---
 const Experience = () => {
   const empleos = [
+    {
+      puesto: "freelancer",
+      lugar: "Desarrollo de Software y Consultoría IT",
+      periodo: "2025 - Actualidad",
+      descripcion: "Diagnóstico y mantenimiento de equipos informáticos.- Instalación y configuración de sistemas operativos.- Conexión a redes, control de drivers y gestión de software.",
+      logro: "Soluciones Digitalización y de Infraestrutura."
+    },
     {
       puesto: "Técnico Administrativo",
       lugar: "Administración Pública - Recursos Humanos - Ministerio de Industria",
@@ -150,7 +158,7 @@ const Education = () => {
           </div>
         </div>
 
-         {/* CARD 2 */}
+        {/* CARD 2 */}
         <div className="card academic-card gold-border">
           <div className="card-header">
             <span className="institution">UNNE - FaCENA</span>
@@ -240,25 +248,24 @@ const Skills = () => (
 
 // --- COMPONENTE: PROYECTOS ---
 const Projects = () => {
-  // 1. Definimos la lista de proyectos con sus datos y enlaces
   const projectList = [
     {
       title: "Sistema PHP/MySQL",
       description: "Administración de datos relacionales para gestión interna.",
       tag: "Full Stack",
-      link: "#" // Reemplazá por el link real si lo tenés
+      link: "#"
     },
     {
       title: "Dashboard Adm.",
       description: "Visualización de indicadores institucionales.",
       tag: "Responsive",
-      link: "#" // Reemplazá por el link real si lo tenés
+      link: "#"
     },
     {
       title: "Portafolio Personal",
       description: "Diseño y desarrollo de mi espacio web profesional para dar a conocer mis proyectos y habilidades.",
       tag: "React",
-      link: "https://diego-solis-dev.vercel.app/" // 👈 Acá va el link donde está desplegado este portafolio
+      link: "https://diego-solis-dev.vercel.app/"
     }
   ];
 
@@ -266,7 +273,6 @@ const Projects = () => {
     <section id="proyectos" className="section bg-light">
       <h2>Proyectos Destacados</h2>
       <div className="projects-grid">
-        {/* 2. Iteramos sobre la lista para renderizar cada tarjeta */}
         {projectList.map((project, index) => (
           <div className="project-card" key={index}>
             <h3>{project.title}</h3>
@@ -275,7 +281,6 @@ const Projects = () => {
             <div className="project-footer">
               <span className="tag">{project.tag}</span>
               
-              {/* 3. Agregamos el enlace externo seguro */}
               <a 
                 href={project.link} 
                 target="_blank" 
@@ -293,14 +298,14 @@ const Projects = () => {
   );
 };
 
-// --- COMPONENTE: CONTACTO (Optimizado) ---
+// --- COMPONENTE: CONTACTO (Formulario y QR Lado a Lado) ---
 const Contact = () => {
   const [enviado, setEnviado] = useState(false);
   const [cargando, setCargando] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setCargando(true); // Bloquear el botón mientras procesa
+    setCargando(true);
 
     emailjs.sendForm(
       'service_98tc8qc', 
@@ -311,8 +316,8 @@ const Contact = () => {
     .then((result) => {
         setEnviado(true);
         setCargando(false);
-        e.target.reset(); // Limpiar inputs del formulario
-        setTimeout(() => setEnviado(false), 5000); // Ocultar mensaje de éxito después de 5s
+        e.target.reset();
+        setTimeout(() => setEnviado(false), 5000);
     }, (error) => {
         console.error(error.text);
         setCargando(false);
@@ -323,8 +328,21 @@ const Contact = () => {
   return (
     <section id="contacto" className="section contact-section">
       <h2>Contacto</h2>
-      <div className="contact-container">
-        <form className="contact-form" onSubmit={sendEmail}>
+      
+      {/* Contenedor flexible en paralelo */}
+      <div className="contact-container" style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '40px',
+        maxWidth: '900px',
+        margin: '0 auto',
+        padding: '0 20px'
+      }}>
+        
+        {/* Formulario a la izquierda */}
+        <form className="contact-form" onSubmit={sendEmail} style={{ flex: '1 1 350px', margin: 0 }}>
           <input type="text" name="user_name" placeholder="Tu Nombre" required />
           <input type="email" name="user_email" placeholder="Tu Email" required />
           <textarea name="message" placeholder="¿En qué puedo ayudarte?" rows="5" required></textarea>
@@ -333,11 +351,40 @@ const Contact = () => {
             type="submit" 
             className="btn-primary" 
             disabled={cargando}
-            style={{ opacity: cargando ? 0.7 : 1, cursor: cargando ? 'not-allowed' : 'pointer' }}
+            style={{ opacity: cargando ? 0.7 : 1, cursor: cargando ? 'not-allowed' : 'pointer', width: '100%' }}
           >
             {cargando ? "Enviando..." : enviado ? "¡Mensaje Enviado! ✅" : "Enviar Mensaje"}
           </button>
         </form>
+
+        {/* Tarjeta con QR en formato SVG (100% Escaneable) a la derecha */}
+        <div style={{
+          flex: '0 1 220px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px',
+          backgroundColor: '#1b365d',
+          borderRadius: '12px',
+          boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+        }}>
+          <p style={{ color: '#ffffff', marginBottom: '15px', fontSize: '0.9rem', textAlign: 'center', fontWeight: '500' }}>
+            📱 Escanea para abrir en tu celular
+          </p>
+          
+          <div style={{ padding: '8px', backgroundColor: '#ffffff', borderRadius: '8px' }}>
+            <QRCodeSVG 
+              value="https://solis-diego.vercel.app/" 
+              size={130}
+              bgColor={"#ffffff"}
+              fgColor={"#1b365d"}
+              level={"M"}
+              includeMargin={false}
+            />
+          </div>
+        </div>
+
       </div>
     </section>
   );
